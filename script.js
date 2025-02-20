@@ -2,15 +2,15 @@
 const products = [
     { 
         id: 1, 
-        name: "Jerry Can Fuel", 
-        price: 29.99, 
+        name: "Герман бензин канистр 2ш хошуутай", 
+        price: "450k", 
         images: ["images/jerry-can-fuel-1.jpg", "images/jerry-can-fuel-2.jpg", "images/jerry-can-fuel-3.jpg"], 
-        details: "High-quality fuel can, 20L capacity, durable steel construction." 
+        details: "20л зэв огт байхгүй шинэ" 
     },
     { 
         id: 2, 
-        name: "Gasoline Saw", 
-        price: 149.99, 
+        name: "Герман бензин хөрөө", 
+        price: "990k", 
         images: ["images/gasoline-saw-1.jpg", "images/gasoline-saw-2.jpg"], 
         details: "Powerful 52cc engine, 18-inch blade, perfect for heavy-duty cutting." 
     },
@@ -73,7 +73,7 @@ const products = [
 ];
 
 // Your phone number (replace with your actual number)
-const shopPhoneNumber = "+97612345678"; // Example Mongolian number
+const shopPhoneNumber = "9415-4083"; // Example Mongolian number
 
 // Render products (using first image as preview)
 function renderProducts() {
