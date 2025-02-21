@@ -84,16 +84,12 @@ function renderProducts() {
         productCard.innerHTML = `
             <img src="${product.images[0]}" alt="${product.name}">
             <h3>${product.name}</h3>
-            <p>$${product.price.toFixed(2)}</p>
+            <p>${product.price}</p>  <!-- Display price as is -->
         `;
         productCard.onclick = () => showProductDetails(product.id);
         productGrid.appendChild(productCard);
     });
 }
-
-// Show product details in modal with carousel
-let currentImageIndex = 0;
-let currentProduct = null;
 
 function showProductDetails(productId) {
     currentProduct = products.find(p => p.id === productId);
@@ -105,14 +101,12 @@ function showProductDetails(productId) {
     const descEl = document.getElementById("product-description");
     const contactEl = document.getElementById("product-contact");
 
-    // Set initial content
     carouselImage.src = currentProduct.images[currentImageIndex];
     nameEl.textContent = currentProduct.name;
-    priceEl.textContent = `Price: $${currentProduct.price.toFixed(2)}`;
+    priceEl.textContent = `Price: ${currentProduct.price}`;  // Display price as is
     descEl.textContent = currentProduct.details;
     contactEl.innerHTML = `Contact us: <a href="tel:${shopPhoneNumber}">${shopPhoneNumber}</a>`;
 
-    // Show/hide buttons based on number of images
     const prevBtn = document.getElementById("prev-btn");
     const nextBtn = document.getElementById("next-btn");
     prevBtn.style.display = currentProduct.images.length > 1 ? "block" : "none";
@@ -120,6 +114,7 @@ function showProductDetails(productId) {
     updateButtonState();
 
     modal.style.display = "block";
+
 }
 
 // Swipe functionality
