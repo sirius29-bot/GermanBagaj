@@ -42,7 +42,15 @@ nav a:hover {
 }
 
 .hero {
-    background: linear-gradient(135deg, #3498db, #8e44ad);
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.8) 0%,    /* Black with transparency */
+        rgba(0, 0, 0, 0.6) 30%,   /* Soft transition from black */
+        rgba(255, 0, 0, 0.6) 40%, /* Red starts blending in */
+        rgba(255, 0, 0, 0.6) 60%, /* Red peak */
+        rgba(255, 255, 0, 0.6) 70%, /* Yellow starts blending */
+        rgba(255, 255, 0, 0.8) 100% /* Yellow with transparency */
+    );
     color: white;
     text-align: center;
     padding: 5rem 2rem;
@@ -117,7 +125,8 @@ nav a:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Prevent modal container from scrolling */
 }
 
 .modal-content {
@@ -129,18 +138,11 @@ nav a:hover {
     max-width: 500px;
     position: relative;
     text-align: center;
+    max-height: 80vh; /* Limit modal height to 80% of viewport */
+    overflow-y: auto; /* Enable scrolling within modal content */
 }
 
-.close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-}
-
-/* Carousel Styles */
+/* Ensure carousel doesn’t interfere with scrolling */
 .carousel {
     position: relative;
     width: 100%;
@@ -178,6 +180,15 @@ nav a:hover {
 
 .next {
     right: 10px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
 }
 
 #product-name {
