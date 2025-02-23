@@ -86,7 +86,7 @@ const products = [
     { 
         id: 7, 
         name: "Цахилгаан хөрөө BOSCH", 
-        price: "800k", 
+        price: "600k", 
         images: ["https://www.agrieuro.de/share/media/images/products/insertions-h-big/24966/elektro-kettensge-bosch-universal-chain-40-1800-w-elektro-kettensge-bosch-universal-chain-40-elektrosge--24966_0_1598364666_IMG_5f451bfa40aff.jpg", 
             "https://www.agrieuro.de/share/media/images/products/insertions-h-big/24966/elektro-kettensge-bosch-universal-chain-40-1800-w-elektro-kettensge-bosch-universal-chain-40-elektrosge--24966_0_1598364666_IMG_5f451bfa25172.jpg",
             "https://www.agrieuro.de/share/media/images/products/insertions-h-big/24966/elektro-kettensge-bosch-universal-chain-40-1800-w-elektro-kettensge-bosch-universal-chain-40-elektrosge--24966_0_1598364666_IMG_5f451bfa08201.jpg",
