@@ -195,7 +195,7 @@ function showProductDetails(productId) {
     nameEl.textContent = currentProduct.name;
     priceEl.textContent = `Үнэ: ${currentProduct.price}`;
     descEl.textContent = currentProduct.details;
-    contactEl.innerHTML = `Бидэнтэй холбогдох: <a href="tel:${shopPhoneNumber}">${shopPhoneNumber}</a>`;
+    contactEl.innerHTML = `Холбогдох Дугаар: <a href="tel:${shopPhoneNumber}">${shopPhoneNumber}</a>`;
     
     // Add video link if available
     if (currentProduct.video) {
