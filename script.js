@@ -140,6 +140,14 @@ const products = [
 // Your phone number
 const shopPhoneNumber = "9415-4083";
 
+// Preload images function
+function preloadImages(imageArray) {
+    imageArray.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+}
+
 // Render products
 function renderProducts() {
     const productGrid = document.getElementById("product-grid");
@@ -179,12 +187,15 @@ function showProductDetails(productId) {
         return;
     }
 
+    // Preload all images for this product
+    preloadImages(currentProduct.images);
+
     // Set initial content
     carouselImage.src = currentProduct.images[currentImageIndex];
     nameEl.textContent = currentProduct.name;
     priceEl.textContent = `Үнэ: ${currentProduct.price}`;
     descEl.textContent = currentProduct.details;
-    contactEl.innerHTML = `Холбогдох дугаар: <a href="tel:${shopPhoneNumber}">${shopPhoneNumber}</a>`;
+    contactEl.innerHTML = `Бидэнтэй холбогдох: <a href="tel:${shopPhoneNumber}">${shopPhoneNumber}</a>`;
     
     // Add video link if available
     if (currentProduct.video) {
@@ -204,7 +215,7 @@ function showProductDetails(productId) {
 
     // Show modal and disable body scroll
     modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Prevent background scroll
+    document.body.style.overflow = "hidden";
 }
 
 // Swipe functionality
@@ -237,14 +248,14 @@ function updateButtonState() {
 // Close modal and restore body scroll
 document.querySelector(".close").onclick = function() {
     document.getElementById("product-modal").style.display = "none";
-    document.body.style.overflow = ""; // Restore body scroll
+    document.body.style.overflow = "";
 };
 
 window.onclick = function(event) {
     const modal = document.getElementById("product-modal");
     if (event.target === modal) {
         modal.style.display = "none";
-        document.body.style.overflow = ""; // Restore body scroll
+        document.body.style.overflow = "";
     }
 };
 
